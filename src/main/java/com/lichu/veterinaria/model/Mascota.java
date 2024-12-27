@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
+@Entity
 public class Mascota {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)

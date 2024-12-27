@@ -3,9 +3,11 @@ package com.lichu.veterinaria.service;
 import com.lichu.veterinaria.model.Mascota;
 import com.lichu.veterinaria.repository.IMascotaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MascotaService implements IMascota {
     @Autowired
     private IMascotaRepository mascoRepo;
