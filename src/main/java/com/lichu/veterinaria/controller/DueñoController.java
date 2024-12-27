@@ -6,6 +6,8 @@ import com.lichu.veterinaria.service.DueñoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class DueñoController {
     @Autowired
@@ -25,6 +27,15 @@ public class DueñoController {
     public void editDuenio(@RequestBody Dueño due){
         dueRepo.editDueño(due);
     }
+
+    @GetMapping("duenio/traer")
+    public List<Dueño> traerDuenios(){
+        return dueRepo.getDueños();
+    }
+
+
+
+
 
 
 }
