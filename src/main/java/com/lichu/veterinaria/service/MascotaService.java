@@ -5,6 +5,7 @@ import com.lichu.veterinaria.repository.IMascotaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,4 +37,18 @@ public class MascotaService implements IMascota {
     public void deleteMascota(Long id) {
         mascoRepo.deleteById(id);
     }
+
+    @Override
+    public List<Mascota> getMascotaRequired() {
+        List<Mascota> listaMascotas = mascoRepo.findAll();
+        List<Mascota> listaMascotasRet = new ArrayList<>();
+        for (Mascota masco: listaMascotas){
+            if(masco.getRaza().equals("caniche") && masco.getEspecie().equals("perro")){
+                listaMascotasRet.add(masco);
+            }
+        }
+
+        return listaMascotasRet;
+    }
+
 }

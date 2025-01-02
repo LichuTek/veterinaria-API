@@ -16,4 +16,6 @@ public interface IMascota {
 
     public void deleteMascota(Long id);
 
+
+    public List<Mascota> getMascotaRequired();
 }

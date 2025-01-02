@@ -12,7 +12,7 @@ public class MascotaController {
     @Autowired
     private MascotaService mascotaServ;
 
-    @PutMapping("/mascota/crear")
+    @PostMapping("/mascota/crear")
     public void crearMascota(@RequestBody Mascota masco){
         mascotaServ.saveMascota(masco);
     }
